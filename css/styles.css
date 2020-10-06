@@ -104,11 +104,12 @@ img {
   padding-top: 32px;
 
   color: var(--title-color);
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-list-link:hover,
 .header-list-link:focus {
   color: var(--accent-color);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contacts-list {
   display: flex;
@@ -126,6 +127,8 @@ img {
 
   color: var(--text-color);
   fill: var(--text-color);
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-mail {
   width: 16px;
@@ -144,13 +147,13 @@ img {
 .header-contacts-link:focus {
   color: var(--accent-color);
   fill: var(--accent-color);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 /* ==========END HEADER================= */
 
 /* ==========HERO================= */
 .hero {
-  max-width: 1920px;
+  max-width: 1600px;
   height: 600px;
   margin: 0 auto;
   background-image: linear-gradient(
@@ -196,13 +199,15 @@ img {
   background: var(--accent-color);
   border: none;
   border-radius: 4px;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .submit-btn:hover,
 .hero-button:focus,
 .submit-btn:focus {
   background: #188ce8;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 /* ==========END HERO================= */
 
@@ -350,13 +355,16 @@ img {
   justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+
   fill: #afb1b8;
+  border-radius: 50%;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover {
   background-color: var(--accent-color);
   fill: #ffffff;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 .social-button:not(:last-child) {
   margin-right: 10px;
@@ -381,9 +389,12 @@ img {
   align-items: center;
   width: 170px;
   height: 90px;
+
+  fill: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  fill: #afb1b8;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-list-item:not(:last-child) {
   margin-right: 30px;
@@ -392,7 +403,7 @@ img {
 .customers-list-link:focus {
   fill: var(--accent-color);
   border: 1px solid var(--accent-color);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 /* ==========END CUSTOMERS================= */
 
@@ -438,13 +449,14 @@ img {
   letter-spacing: 0.03em;
 
   color: rgba(255, 255, 255, 0.6);
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-contacts-mail:hover,
 .footer-contacts-phone:hover,
 .footer-contacts-mail:focus,
 .footer-contacts-phone:focus {
   color: var(--accent-color);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social {
   width: 206px;
@@ -470,9 +482,16 @@ img {
   align-items: center;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+
   fill: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background: var(--accent-color);
 }
 .footer-social-item:not(:last-child) {
   margin-right: 10px;
@@ -481,11 +500,7 @@ img {
   width: 20px;
   height: 20px;
 }
-.footer-social-link:hover,
-.footer-social-link:focus {
-  background: var(--accent-color);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 /* ==========END FOOTER================= */
 
 /* =============MODAL-WINDOW =============*/
@@ -495,16 +510,18 @@ img {
   top: 0;
   width: 100%;
   height: 100%;
+
   background: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  visibility: visible;
-  transition: all 0.8s ease 0s;
+
+  transition: opacity 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.is-hidden {
-  visibility: hidden;
+ .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-  transition: all 0.8s ease 0s;
+}
+.backdrop.is-hidden .modal {
+  transform: perspective(600px) translate(-50%, -120%) rotateX(45deg);
 }
 .modal {
   position: absolute;
@@ -514,10 +531,14 @@ img {
   min-width: 528px;
   min-height: 581px;
   padding: 40px;
+
   background: #ffffff;
+  border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+
+  transform: perspective(600px), rotateX(0deg);
+  transition: transform 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .close-btn {
   position: absolute;
@@ -525,17 +546,19 @@ img {
   right: 8px;
   width: 30px;
   height: 30px;
-  border-radius: 50%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
   border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
   background: #ffffff;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-btn:hover {
   fill: var(--accent-color);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-icon {
   width: 18px;
@@ -597,6 +620,7 @@ margin-bottom: 12px;
   border-radius: 4px;
 
   color: var(--title-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-list-button:hover,
 .filter-list-button:active {
@@ -605,7 +629,7 @@ margin-bottom: 12px;
   border-radius: 4px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 /* ==========END FILTER================= */
 
@@ -615,17 +639,20 @@ margin-bottom: 12px;
   flex-wrap: wrap;
   margin: -15px;
 }
-.portfolio-list-item:hover {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 .portfolio-list-item {
   box-sizing: border-box;
   justify-content: center;
   width: 370px;
   margin: 15px;
+
   background: #ffffff;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-list-item:hover,
+.portfolio-list-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .card-overlay {
   position: relative;
@@ -648,7 +675,8 @@ margin-bottom: 12px;
   transform: translatey(100%);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-list-item:hover .card-description {
+.portfolio-list-link:hover .card-description,
+.portfolio-list-link:focus .card-description {
   transform: translatey(0);
   overflow-y: auto;
 }
