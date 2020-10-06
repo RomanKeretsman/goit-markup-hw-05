@@ -521,7 +521,7 @@ img {
   pointer-events: none;
 }
 .backdrop.is-hidden .modal {
-  transform: perspective(600px) translate(-50%, -120%) rotateX(45deg);
+  transform: perspective(600px) translate(-50%, -138%) rotateX(45deg);
 }
 .modal {
   position: absolute;
